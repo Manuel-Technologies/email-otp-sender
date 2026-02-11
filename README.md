@@ -7,6 +7,7 @@ A secure and reliable email OTP sender for developers.
 *   Send OTPs, verification codes, and confirmation codes via email.
 *   Securely manage credentials using environment variables.
 *   Easy to integrate into any Python project.
+*   Simple Flask API for sending OTPs.
 
 ## Getting Started
 
@@ -42,6 +43,24 @@ A secure and reliable email OTP sender for developers.
 from main import send_otp_email
 
 send_otp_email("recipient@example.com", "Your OTP Code", "123456")
+```
+
+### API Usage
+
+To run the Flask API, run the following command:
+
+```bash
+python api.py
+```
+
+You can then send a POST request to `http://127.0.0.1:5000/send-otp` with the following JSON body:
+
+```json
+{
+    "recipient_email": "recipient@example.com",
+    "subject": "Your OTP Code",
+    "otp": "123456"
+}
 ```
 
 ## Contributing
